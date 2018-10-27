@@ -54,8 +54,8 @@ const ShowRandomDogIntentHandler = {
         return handlerInput.responseBuilder
             .speak(speechOutput)
             // .reprompt('')
-            //.withSimpleCard(title, displayOutput)
-            withStandardCard(title, displayOutput, null, `${dogs[0].url}`)
+            .withSimpleCard(title, displayOutput)
+            //withStandardCard(title, displayOutput, `${dogs[0].url}`, `${dogs[0].url}`)
             .getResponse();
     }
 }
