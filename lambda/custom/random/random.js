@@ -1,7 +1,7 @@
 'use strict';
 const helper = require('alexa-helper');
 
-const title = 'Good Dogs';
+const appTitle = 'Good Dogs';
 const errorMessage = 'Sorry, there was an error fetching dog info.';
 
 // search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1
@@ -36,13 +36,15 @@ const ShowRandomDogIntentHandler = {
 
         let speechOutput = '';
         let displayOutput = '';
+        let imageUrl = '';
 
         try{
             const dogs = await helper.httpsHelper.httpGet(options);
 
             if (dogs.length === 1) {
                 speechOutput = `Here's a ${dogs[0].breeds[0].name}, bred for ${dogs[0].breeds[0].bred_for}. Their temperament is ${dogs[0].breeds[0].temperament}.`;
-                displayOutput = `${dogs[0].title}\n`;
+                displayOutput = `${dogs[0].breeds[0].name}\n`;
+                imageUrl = `${dogs[0].url}`;
             } 
         } catch (error) {
             speechOutput = errorMessage;
@@ -54,8 +56,8 @@ const ShowRandomDogIntentHandler = {
         return handlerInput.responseBuilder
             .speak(speechOutput)
             // .reprompt('')
-            .withSimpleCard(title, displayOutput)
-            //withStandardCard(title, displayOutput, `${dogs[0].url}`, `${dogs[0].url}`)
+            // .withSimpleCard(appTitle, displayOutput)
+            withStandardCard(title, displayOutput, imageUrl, imageUrl)
             .getResponse();
     }
 }
