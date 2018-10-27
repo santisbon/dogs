@@ -43,8 +43,6 @@ describe('Good Dogs Skill tests', function() {
             reply = await alexa.utter('show me a dog');
 
             assert.include(reply.response.outputSpeech.ssml, 'Here\'s a');
-            // console.log(reply.response.getResponse());
-            //assert.include(reply.response.getResponse().outputSpeech.ssml, 'Here\'s a');
         });
     });
 });
