@@ -25,11 +25,14 @@
           ]
         },
         {
-          "name": "ShowRandomDog",
+          "name": "ShowRandomDogIntent",
           "slots": [],
           "samples": [
               "show me a dog",
-              "show me a good boy"
+              "show me a good boy",
+              "i want to see a dog",
+              "i want to get a dog",
+              "give me a dog"
           ]
         }
       ]

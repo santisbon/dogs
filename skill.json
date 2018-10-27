@@ -3,18 +3,17 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "Shows dog info",
           "examplePhrases": [
-            "Alexa open hello world",
-            "Alexa tell hello world hello",
-            "Alexa ask hello world say hello"
+            "Alexa tell good dogs to show me a dog",
+            "Alexa tell tell good dogs I want to see a dog"
           ],
-          "name": "dogs",
-          "description": "Sample Full Description"
+          "name": "Good Dogs",
+          "description": "Shows info about dogs"
         }
       },
       "isAvailableWorldwide": true,
-      "testingInstructions": "Sample Testing Instructions.",
+      "testingInstructions": "",
       "category": "EDUCATION_AND_REFERENCE",
       "distributionCountries": []
     },
